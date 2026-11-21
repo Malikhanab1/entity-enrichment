@@ -1,0 +1,56 @@
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[oc]
+*.egg-info/
+dist/
+build/
+wheels/
+
+# Virtual environment (uv)
+.venv/
+
+# ── Model artefacts (large binary files) ─────────────────────────────────────
+# Final quantised model served via Ollama — regenerate with:
+#   ollama create lead-classifier -f ./Modelfile
+*.gguf
+
+# Raw safetensors weights — produced by merge_and_convert.py
+*.safetensors
+
+# Training checkpoint blobs
+training_args.bin
+
+# Merged / converted model directories (hundreds of MB each)
+lead-model-causal/
+lead-model-merged/
+
+# ── llama.cpp (embedded folder — ignore entirely as requested) ───────────────
+llama.cpp/
+
+# ── Tokeniser files (large, fetched from HuggingFace) ────────────────────────
+# tokenizer.json and tokenizer_config.json at the repo root are outputs of
+# merge_and_convert.py; the canonical copies live inside the model dirs above.
+tokenizer.json
+tokenizer_config.json
+
+# ── Dataset ───────────────────────────────────────────────────────────────────
+# Full dataset is large; sample.csv is committed as a reference.
+datasets/dataset.csv
+
+# ── Secrets / local config ────────────────────────────────────────────────────
+.env
+.env.*
+
+# ── Databases & Archives ──────────────────────────────────────────────────────
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.zip
+*.tar.gz
+*.tgz
+*.gz
+
+# ── OS noise ─────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db

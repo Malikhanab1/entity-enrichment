@@ -1,0 +1,19 @@
+# Compiled binary
+poller
+
+# Environment & secrets
+.env
+*.env
+!.env.example
+
+# Runtime state
+seen_posts.log
+groups.csv
+
+# Go build cache
+*.test
+*.out
+
+# OS
+.DS_Store
+Thumbs.db

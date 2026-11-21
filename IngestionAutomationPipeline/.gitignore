@@ -1,0 +1,32 @@
+# ── Directories ───────────────────────────────────────────────────────────────
+junk/
+logs/
+data/
+.venv/
+
+# ── Databases ─────────────────────────────────────────────────────────────────
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+
+# ── Archives & Compressed Files ───────────────────────────────────────────────
+*.zip
+*.tar.gz
+*.tgz
+*.gz
+*.rar
+*.7z
+
+# ── Secrets & Local Configs ───────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── Python Cache ──────────────────────────────────────────────────────────────
+__pycache__/
+*.py[oc]
+*.egg-info/
+dist/
+build/
+wheels/

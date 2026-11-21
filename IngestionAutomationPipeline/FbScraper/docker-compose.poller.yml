@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  poller:
+    build:
+      context: .
+      dockerfile: Dockerfile.poller
+    restart: unless-stopped
+    volumes:
+      - ./groups.csv:/app/groups.csv:ro
+      - poller-seen:/app/data          # permanent volume for seen_posts.log
+    environment:
+      FACEBOOK_C_USER: "${FACEBOOK_C_USER}"
+      FACEBOOK_XS:     "${FACEBOOK_XS}"
+      FACEBOOK_SB:     "${FACEBOOK_SB:-}"
+      FACEBOOK_DATR:   "${FACEBOOK_DATR:-}"
+      FACEBOOK_FR:     "${FACEBOOK_FR:-}"
+      FACEBOOK_PS_L:   "${FACEBOOK_PS_L:-}"
+      FACEBOOK_PS_N:   "${FACEBOOK_PS_N:-}"
+
+      INGEST_URL:    "${INGEST_URL}"
+      GROUPS_CSV:    "/app/groups.csv"
+      POLL_INTERVAL: "${POLL_INTERVAL:-60}"
+      SEEN_FILE:     "/app/data/seen_posts.log"   # lives on the persistent volume
+
+volumes:
+  poller-seen:   # survives container rebuilds and redeployments

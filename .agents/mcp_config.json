@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "enrichment": {
+      "command": "/home/rixx/Projects/Cognivelle/entity-enrichment-cognivelle/mcp/run.sh",
+      "args": []
+    }
+  }
+}

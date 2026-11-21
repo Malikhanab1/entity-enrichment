@@ -1,0 +1,16 @@
+# finetuning/requirements-serve.txt
+#
+# Runtime dependencies for finetuning/serve.py (the SEQ_CLS inference server).
+# Install with:
+#   pip install -r requirements-serve.txt
+# or via uv (recommended, matches the rest of the finetuning/ project):
+#   uv pip install -r requirements-serve.txt
+
+fastapi>=0.111.0
+uvicorn[standard]>=0.30.0
+peft>=0.20.0
+transformers>=5.16.1
+torch>=2.13.0
+accelerate>=1.14.0
+sentencepiece>=0.2.2
+pydantic>=2.0.0

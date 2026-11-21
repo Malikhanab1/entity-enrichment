@@ -1,0 +1,6 @@
+aiohttp
+pandas
+openpyxl
+beautifulsoup4
+lxml
+playwright

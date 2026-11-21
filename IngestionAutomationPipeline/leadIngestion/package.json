@@ -1,0 +1,36 @@
+{
+  "name": "lead-ingest-service",
+  "version": "1.0.0",
+  "description": "Microservice that ingests raw text posts, uses an LLM (Ollama) to detect sales intent, extracts contact details, assigns leads to a sales team round-robin, and forwards them to a messaging service.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@ai-sdk/anthropic": "^4.0.46",
+    "@ai-sdk/google": "^4.0.60",
+    "@ai-sdk/groq": "^4.0.35",
+    "@ai-sdk/openai": "^4.0.54",
+    "ai": "^7.0.88",
+    "axios": "^1.7.7",
+    "better-sqlite3": "^11.3.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "node-cache": "^5.1.2",
+    "papaparse": "^5.4.1",
+    "pino": "^9.4.0",
+    "pino-pretty": "^11.2.2",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.11",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.2",
+    "@types/papaparse": "^5.3.14",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.5.4"
+  }
+}
